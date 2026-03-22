@@ -1,6 +1,6 @@
 # 个人博客（Hexo）
 
-基于 [Hexo](https://hexo.io/) 的静态博客，默认主题 [Landscape](https://github.com/hexojs/hexo-theme-landscape)。
+基于 [Hexo](https://hexo.io/) 的静态博客，主题 [Butterfly](https://github.com/jerryc127/hexo-theme-butterfly)（[中文文档](https://butterfly.js.org/)）。
 
 ## 环境要求
 
@@ -20,7 +20,10 @@
 
 ## 站点配置
 
-编辑根目录 `_config.yml`：站点标题、作者、`theme` 等。
+- 根目录 `_config.yml`：站点标题、作者、`url` / `root` 等。
+- **`_config.butterfly.yml`**：Butterfly 主题配置（已从主题默认复制，可放心改；升级主题时不会被 `npm install` 覆盖）。
+
+更多选项见 [Butterfly 文档](https://butterfly.js.org/posts/21cfbf15/)。
 
 **线上地址**：当前按「GitHub 用户 `wenbinwang`、仓库名 `blog_cursor`」配置了：
 
