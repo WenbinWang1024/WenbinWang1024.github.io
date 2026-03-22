@@ -55,6 +55,21 @@
 
 `https://你的用户名.github.io/blog_cursor/`
 
+### 部署没生效？先查这三点
+
+1. **是否已关联远程并推送**（最常见）  
+   在本机项目根目录执行：
+   ```bash
+   git remote -v
+   ```
+   若**没有任何输出**，说明还没执行过 `git remote add` / `git push`，GitHub 上不会有代码，Actions 也不会跑，站点自然不会更新。
+
+2. **仓库是否用 Actions 发布 Pages**  
+   **Settings → Pages → Build and deployment** 里，**Source** 必须是 **GitHub Actions**（不要选 Deploy from a branch 除非你知道自己在做什么）。
+
+3. **Actions 是否跑绿**  
+   打开仓库的 **Actions** 标签，最新 workflow 应成功；若失败，点进去看日志（常见原因：`npm ci` 与本地 `package-lock.json` 不一致，需提交 lock 文件后重推）。
+
 ### 不用 `gh` 时
 
 在 GitHub 网页新建空仓库后，同样设置 Pages 源为 **GitHub Actions**，再执行上面的 `git remote` 与 `git push`（可用 HTTPS）。
