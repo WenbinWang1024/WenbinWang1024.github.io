@@ -13,7 +13,7 @@
 | 命令 | 说明 |
 |------|------|
 | `npm install` | 安装依赖（首次克隆后执行） |
-| `npm run server` | 本地预览（可选，默认 <http://localhost:4000>） |
+| `npm run server` | 本地预览（会尝试打开浏览器；**见下方说明**） |
 | `npm run build` | 生成静态站点到 `public/` |
 | `npm run clean` | 清理缓存与 `public/` |
 | `npx hexo new "文章标题"` | 新建文章（Markdown 在 `source/_posts/`） |
@@ -25,12 +25,22 @@
 
 更多选项见 [Butterfly 文档](https://butterfly.js.org/posts/21cfbf15/)。
 
-**线上地址**：当前按「GitHub 用户 `wenbinwang`、仓库名 `blog_cursor`」配置了：
+### 本地预览（端口与地址）
 
-- `url: https://wenbinwang.github.io/blog_cursor`
-- `root: /blog_cursor/`
+当前为「用户名.github.io」用户主页配置，`root: /`，本地开发服务器一般为：
 
-若你的 GitHub 用户名或仓库名不同，请同时修改这两项；若使用 **`用户名.github.io`** 这种用户主页仓库，应改为 `url: https://你的用户名.github.io` 且 `root: /`。
+**<http://localhost:4000/>**
+
+运行 `npm run server` 时，Hexo 会打印实际地址，并已加上 `-o` 尝试打开浏览器。若端口被占用，可换端口：
+
+```bash
+npm run server -- -p 4001
+```
+
+**线上地址**（与 `_config.yml` 中 `url` 一致）：  
+<https://wenbinwang1024.github.io/>
+
+若以后改用「普通仓库 + 项目站」形式，需把 `url` / `root` 改成带仓库名的子路径（见 Hexo 文档）。
 
 ## 部署到 GitHub Pages（推荐）
 

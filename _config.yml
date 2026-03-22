@@ -12,9 +12,9 @@ language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
-# GitHub Pages 项目站：与仓库名一致；若仓库为「用户名.github.io」则设 url 为 https://用户名.github.io 且 root: /
-url: https://wenbinwang.github.io/blog_cursor
-root: /blog_cursor/
+# 当前远程为「用户名.github.io」用户主页仓库，站点在域名根路径
+url: https://wenbinwang1024.github.io
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -93,6 +93,11 @@ pagination_dir: page
 include:
 exclude:
 ignore:
+
+# Server (hexo server / npm run server)
+server:
+  port: 4000
+  # 本地预览：http://localhost:端口/
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
